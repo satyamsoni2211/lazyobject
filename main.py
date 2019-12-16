@@ -1,4 +1,5 @@
 from pathlib import Path
+import pandas as pd
 
 
 class LazyObject(object):
@@ -26,5 +27,5 @@ class LazyObject(object):
 
 
 a = LazyObject('abc.csv', mode='r', encoding=None, errors='strict')
-print(a.read())
+print(pd.read_csv(a))
 print(a.is_file())
